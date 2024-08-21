@@ -19,7 +19,6 @@ const foodemojis = [
     "🥥", 
     "🥝", 
     "🍅", 
-    
 ];
 
 const Food = ({ coords, top }) => {

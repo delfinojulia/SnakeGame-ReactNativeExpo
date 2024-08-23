@@ -25,7 +25,7 @@ const Header = ({top, score, paused, pause, reload}) => {
                   color={colors.p6}
                 />
             </TouchableOpacity>
-            <Text style={StyleSheet.score}>{score}</Text>
+            <Text style={styles.score}>{score}</Text>
         </View>
     )
 }

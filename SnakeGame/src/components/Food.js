@@ -30,10 +30,10 @@ const Food = ({ coords, top }) => {
         left: coords.x * PIXEL + BORDER,
     };
     return (
-        <View style={{ position: "absolute", foodStyle }}>
+        <View style={[{ position: "absolute" }, foodStyle]}>
             <Text>{randDomFood}</Text>
         </View>
     );
-};
+}
 
-export default Food;
+export default Food

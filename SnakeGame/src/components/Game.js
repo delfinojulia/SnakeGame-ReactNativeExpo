@@ -92,7 +92,7 @@ const Game = () => {
             case Direction.Up:
                 head.y -= 1;
                 break;
-            default:
+              default:
                 break;
         }
         if (testGameOver(head)) {

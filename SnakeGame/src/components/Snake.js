@@ -7,7 +7,7 @@ import {
   GAP, 
   HEADER_HEIGHT, 
   PIXEL, 
-  SPEED 
+  SPEED,
 } from "../consts";
 
 const Snake = ({ snake, top }) => {
@@ -33,7 +33,7 @@ const Snake = ({ snake, top }) => {
         );
       })}
     </>
-  );
-};
+  )
+}
 
-export default Snake;
+export default Snake

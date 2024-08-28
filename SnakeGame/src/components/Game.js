@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { SafeAreaView, StyleSheet, Dimensions } from "react-native"
-import { PanGestureHandler } from "react-native-gesture-handler"
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { PanGestureHandler, } from "react-native-gesture-handler"
+import {useSafeAreaInsets } from "react-native-safe-area-context";
 import { Direction } from "../types";
-import * as Haptics from "expo-haptics";
+import * as Haptics from  "expo-haptics";
 
 const { height } = Dimensions.get("window");
 import {
@@ -25,8 +25,8 @@ import { colors } from "../styles/theme"
 
 const Game = () => {
     const [direction, setDirection] = useState(Direction.Right);
-    const [snake, setSnake] = useState(SNAKE_START);
-    const [food, setFood] = useState(FOOD_START);
+    const [snake, setSnake] = useState (SNAKE_START);
+    const [food, setFood] = useState (FOOD_START);
     const [isGameOver, setIsGameOver] = useState(false);
     const [isGamePaused, setIsGamePaused] = useState(false);
     const [score, setScore] = useState(0);
@@ -41,6 +41,7 @@ const Game = () => {
         minY: 0,
         maxY: ROWS - 1,
     };
+
 
     function resetGame() {
         setSnake(SNAKE_START);
@@ -58,7 +59,7 @@ const Game = () => {
         }
     }, [snake, isGameOver, isGamePaused]);
 
-    function handlerGesture(event) {
+    function handleGesture(event) {
         const { translationX, translationY } = event.nativeEvent;
 
         if (Math.abs(translationX) > Math.abs(translationY)) {
@@ -135,18 +136,18 @@ const Game = () => {
     }, [food]);
 
     return (
-        <PanGestureHandler onGestureEvent={handlerGesture}>
+        <PanGestureHandler onGestureEvent={handleGesture}>
             <SafeAreaView style={styles.container}>
                 <Header
-                    top={insets.top}
-                    score={score}
-                    paused={isGamePaused}
-                    pause={() => setIsGamePaused((prev) => !prev)}
-                    reload={() => setIsGameOver((prev) => !prev)}
-                />
-                <Board rows={ROWS} cols={COLS} top={insets.top} />
-                <Snake snake={snake} top={insets.top} />
-                {RandomFood}
+                top={insets.top}
+                score={score}
+                paused={isGamePaused}
+                pause={() => setIsGamePaused((prev) => !prev)}
+                reload={() => setIsGameOver((prev) => !prev)}
+            />
+            <Board rows={ROWS} cols={COLS} top={insets.top} />
+            <Snake snake={snake} top={insets.top} />
+            { RandomFood }
             </SafeAreaView>
         </PanGestureHandler>
     )

@@ -14,16 +14,16 @@ const Header = ({top, score, paused, pause, reload}) => {
     }
 
     return (
-        <View style={[styleHeader, styleheader]}>
+        <View style={[styleHeader, styles.header]}>
             <TouchableOpacity onPress={reload}>
                 <Ionicons name="reload" size={26} color={colors.p6} />
             </TouchableOpacity>
             <TouchableOpacity onPress={pause}>
                 <Ionicons
-                  name={paused ? "play" : "pause"}
-                  size={26}
-                  color={colors.p6}
-                />
+                name={paused ? "play" : "pause"}
+                size={26}
+                color={colors.p6}
+              />
             </TouchableOpacity>
             <Text style={styles.score}>{score}</Text>
         </View>
@@ -32,7 +32,7 @@ const Header = ({top, score, paused, pause, reload}) => {
 
 const styles = StyleSheet.create({
     header: {
-        flexDirection: "row",
+        flexDirection:"row",
         alignItems: "center",
         justifyContent: "space-between",
     },
